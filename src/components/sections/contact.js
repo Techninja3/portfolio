@@ -4,6 +4,7 @@ import { srConfig } from '@config';
 import sr from '@utils/sr';
 import { usePrefersReducedMotion } from '@hooks';
 import emailjs from '@emailjs/browser';
+import Swal from 'sweetalert2';
 
 const StyledContactSection = styled.section`
   max-width: 600px;
@@ -65,7 +66,11 @@ const Contact = () => {
     e.preventDefault();
 
     if (!contactForm.name || !contactForm.email || !contactForm.message) {
-      alert('Fill the form please.');
+      Swal.fire({
+        title: 'Error!',
+        text: 'All fields are required.',
+        icon: 'error',
+      });
       return;
     }
     setIsLoading(true);
@@ -80,6 +85,7 @@ const Contact = () => {
       function() {
         setContactForm({ name: '', email: '', message: '' });
         setIsLoading(false);
+        window.location.reload();
       },
       function(error) {
         setIsLoading(false);
@@ -152,10 +158,7 @@ const Contact = () => {
             }}></textarea>
           <small>The one where you tell me what I can do to help you.</small>
         </div>
-        <button
-          className="email-link"
-          disabled={!contactForm.name || !contactForm.email || !contactForm.message || isLoading}
-          type="submit">
+        <button className="email-link" disabled={isLoading} type="submit">
           {isLoading ? 'Sending...' : 'Send Message'}
         </button>
       </form>
