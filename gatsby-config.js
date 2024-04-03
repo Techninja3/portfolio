@@ -5,8 +5,8 @@ module.exports = {
     title: 'Rocco Santini',
     description:
       'Rocco Santini is a software engineer who specializes in building (and occasionally designing) exceptional digital experiences.',
-    siteUrl: 'https://rondaa.vercel.app', // No trailing slash allowed!
-    image: '/og.png', // Path to your image you placed in the 'static' folder
+    siteUrl: 'https://www.rocco-santini.com/', // No trailing slash allowed!
+    image: '/abc.png', // Path to your image you placed in the 'static' folder
     twitterUsername: '',
   },
   plugins: [
