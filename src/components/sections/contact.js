@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
-import { srConfig, email } from '@config';
+import { srConfig } from '@config';
 import sr from '@utils/sr';
 import { usePrefersReducedMotion } from '@hooks';
 
@@ -59,14 +59,53 @@ const Contact = () => {
 
       <h2 className="title">Get In Touch</h2>
 
-      <p>
-        Although I’m not currently looking for any new opportunities, my inbox is always open.
-        Whether you have a question or just want to say hi, I’ll try my best to get back to you!
-      </p>
-
-      <a className="email-link" href={`mailto:${email}`}>
-        Say Hello
-      </a>
+      <form style={{ textAlign: 'start' }}>
+        <div style={{ marginBottom: '10px' }}>
+          <label>Full Name</label>
+          <input
+            type="text"
+            placeholder="John Doe"
+            style={{
+              width: '100%',
+              padding: '15px 15px',
+              margin: '5px 0px',
+              border: '2px solid #64ffda',
+              fontWeight: 'bold',
+            }}
+          />
+          <small>The one where you tell me your name.</small>
+        </div>
+        <div style={{ marginBottom: '10px' }}>
+          <label>Email Address</label>
+          <input
+            type="email"
+            placeholder="johndoe@exmaple.com"
+            style={{
+              width: '100%',
+              padding: '15px 15px',
+              margin: '5px 0px',
+              border: '2px solid #64ffda',
+              fontWeight: 'bold',
+            }}
+          />
+          <small>The one where you tell me how i can contact you back.</small>
+        </div>
+        <div>
+          <label>Message</label>
+          <textarea
+            placeholder="Type your message here"
+            rows={13}
+            style={{
+              width: '100%',
+              padding: '15px 15px',
+              margin: '5px 0px',
+              border: '2px solid #64ffda',
+              fontWeight: 'bold',
+            }}></textarea>
+          <small>The one where you tell me what I can do to help you.</small>
+        </div>
+        <button className="email-link">Send Message</button>
+      </form>
     </StyledContactSection>
   );
 };
