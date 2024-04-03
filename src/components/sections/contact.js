@@ -63,6 +63,11 @@ const Contact = () => {
 
   const HandleContact = e => {
     e.preventDefault();
+
+    if (!contactForm.name || !contactForm.email || !contactForm.message) {
+      alert('Fill the form please.');
+      return;
+    }
     setIsLoading(true);
 
     const templateParams = {
