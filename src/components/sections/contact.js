@@ -152,7 +152,10 @@ const Contact = () => {
             }}></textarea>
           <small>The one where you tell me what I can do to help you.</small>
         </div>
-        <button className="email-link" type="submit">
+        <button
+          className="email-link"
+          disabled={!contactForm.name || !contactForm.email || !contactForm.message || isLoading}
+          type="submit">
           {isLoading ? 'Sending...' : 'Send Message'}
         </button>
       </form>
