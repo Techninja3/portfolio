@@ -46,6 +46,7 @@ const Contact = () => {
   const revealContainer = useRef(null);
   const prefersReducedMotion = usePrefersReducedMotion();
 
+  const [isLoading, setIsLoading] = useState(false);
   const [contactForm, setContactForm] = useState({
     name: '',
     email: '',
@@ -62,6 +63,7 @@ const Contact = () => {
 
   const HandleContact = e => {
     e.preventDefault();
+    setIsLoading(true);
 
     const templateParams = {
       name: contactForm.name,
@@ -72,8 +74,10 @@ const Contact = () => {
     emailjs.send('service_w6vyssg', 'template_clxemam', templateParams, '5Ymfx9w-5o8_5AUXZ').then(
       function() {
         setContactForm({ name: '', email: '', message: '' });
+        setIsLoading(false);
       },
       function(error) {
+        setIsLoading(false);
         alert('FAILED...', JSON.stringify(error));
       },
     );
@@ -144,7 +148,7 @@ const Contact = () => {
           <small>The one where you tell me what I can do to help you.</small>
         </div>
         <button className="email-link" type="submit">
-          Send Message
+          {isLoading ? 'Sending...' : 'Send Message'}
         </button>
       </form>
     </StyledContactSection>
