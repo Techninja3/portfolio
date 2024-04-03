@@ -1,8 +1,9 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { srConfig } from '@config';
 import sr from '@utils/sr';
 import { usePrefersReducedMotion } from '@hooks';
+import emailjs from '@emailjs/browser';
 
 const StyledContactSection = styled.section`
   max-width: 600px;
@@ -45,6 +46,12 @@ const Contact = () => {
   const revealContainer = useRef(null);
   const prefersReducedMotion = usePrefersReducedMotion();
 
+  const [contactForm, setContactForm] = useState({
+    name: '',
+    email: '',
+    message: '',
+  });
+
   useEffect(() => {
     if (prefersReducedMotion) {
       return;
@@ -53,17 +60,41 @@ const Contact = () => {
     sr.reveal(revealContainer.current, srConfig());
   }, []);
 
+  const HandleContact = e => {
+    e.preventDefault();
+
+    const templateParams = {
+      name: contactForm.name,
+      email: contactForm.email,
+      message: contactForm.message,
+    };
+
+    emailjs.send('service_w6vyssg', 'template_clxemam', templateParams, '5Ymfx9w-5o8_5AUXZ').then(
+      function() {
+        setContactForm({ name: '', email: '', message: '' });
+      },
+      function(error) {
+        alert('FAILED...', JSON.stringify(error));
+      },
+    );
+  };
+
   return (
     <StyledContactSection id="contact" ref={revealContainer}>
       <h2 className="numbered-heading overline">What’s Next?</h2>
 
       <h2 className="title">Get In Touch</h2>
 
-      <form style={{ textAlign: 'start' }}>
+      <form style={{ textAlign: 'start' }} onSubmit={HandleContact}>
         <div style={{ marginBottom: '10px' }}>
-          <label>Full Name</label>
+          <label htmlFor="name">Full Name</label>
           <input
             type="text"
+            name="name"
+            onChange={e => {
+              setContactForm({ ...contactForm, name: e.target.value });
+            }}
+            value={contactForm.name}
             placeholder="John Doe"
             style={{
               width: '100%',
@@ -76,9 +107,14 @@ const Contact = () => {
           <small>The one where you tell me your name.</small>
         </div>
         <div style={{ marginBottom: '10px' }}>
-          <label>Email Address</label>
+          <label htmlFor="email">Email Address</label>
           <input
             type="email"
+            name="email"
+            value={contactForm.email}
+            onChange={e => {
+              setContactForm({ ...contactForm, email: e.target.value });
+            }}
             placeholder="johndoe@exmaple.com"
             style={{
               width: '100%',
@@ -91,9 +127,12 @@ const Contact = () => {
           <small>The one where you tell me how i can contact you back.</small>
         </div>
         <div>
-          <label>Message</label>
+          <label htmlFor="message">Message</label>
           <textarea
+            name="message"
             placeholder="Type your message here"
+            value={contactForm.message}
+            onChange={e => setContactForm({ ...contactForm, message: e.target.value })}
             rows={13}
             style={{
               width: '100%',
@@ -104,7 +143,9 @@ const Contact = () => {
             }}></textarea>
           <small>The one where you tell me what I can do to help you.</small>
         </div>
-        <button className="email-link">Send Message</button>
+        <button className="email-link" type="submit">
+          Send Message
+        </button>
       </form>
     </StyledContactSection>
   );
