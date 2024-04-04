@@ -7,6 +7,10 @@ module.exports = {
       url: 'https://github.com/Techninja3',
     },
     {
+      name: 'Twitter',
+      url: 'https://twitter.com/rocco83dev',
+    },
+    {
       name: 'Linkedin',
       url: ' https://www.linkedin.com/in/rocco-santini-b704ba271/',
     },
