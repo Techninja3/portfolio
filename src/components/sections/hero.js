@@ -65,7 +65,7 @@ const Hero = () => {
   const four = (
     <>
       <p>
-        I’m a Senior Web Developer With over 6 years of experience in website development and
+        I’m a Senior Web Developer With over 10 years of experience in website development and
         design, I bring a wealth of expertise to the table. My focus lies primarily in front-end
         development, where I've honed my skills in creating user-friendly interfaces and
         applications. Throughout my career, I've prioritized best practices to ensure top-notch
