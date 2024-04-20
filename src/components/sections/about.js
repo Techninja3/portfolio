@@ -62,12 +62,22 @@ const About = () => {
     'HTML5',
     'CSS3',
     'React',
-    'Vue.js or Angular',
+    'Vue.js',
+    'Angular',
+    'Next.js',
+    'Gatsby',
+    'React Native',
+    'Flutter',
     'Node.js',
     'WordPress',
+    'Laravel',
+    'Django',
+    '.Net',
+    'Symfony',
     'jQuery',
     'Express.js',
     'MongoDB',
+    'PostgreSQL',
     'SQL',
     'Jest or Mocha',
     'React Testing Library',
@@ -115,7 +125,7 @@ const About = () => {
               development team.
             </p>
 
-            <p>Here are a few skills I’ve been working with recently:</p>
+            <p>Here are my technical & Soft skills I’ve been working with recently:</p>
           </div>
 
           <ul className="skills-list">
