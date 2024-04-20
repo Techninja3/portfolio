@@ -10,3 +10,6 @@ url: ''
 - Designed, and developed the dashboard application for the customer service team to manage order booking, appointment, inquiry, change tariff, mobile/broadband data maintenance and new customer subscriptions.
 - Design the framework (plugging components with standards) that makes the system more robotic working with the management team. (React, Next, Tailwind)
 - Developed SaaS, CRM, SPA, and E-commerce Websites using Javascript/Typescript, React/Angular, Node, Vue, Redux thunk, Next.js, Gatsby, Nest, Nuxt, Supabase, Redux form, Reselect, Rest API, Axios, SCSS, Material Ui.
+- Implemented Agile methodologies to streamline development processes and ensure timely delivery of high-quality software.
+-	Implemented automated testing and CI/CD pipelines, reducing deployment time by 50% and enhancing overall code quality.
+
