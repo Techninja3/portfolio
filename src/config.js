@@ -3,6 +3,10 @@ module.exports = {
 
   socialMedia: [
     {
+      name: 'GitHub',
+      url: 'https://github.com/Midas0615',
+    },
+    {
       name: 'Twitter',
       url: 'https://twitter.com/rocco83dev',
     },
