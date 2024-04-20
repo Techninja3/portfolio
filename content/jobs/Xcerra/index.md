@@ -1,6 +1,6 @@
 ---
 date: '2023-10-01'
-title: 'Senior Frontend Web Developer'
+title: 'Full Stack | Lead Developer'
 company: 'Xcerra CORPORATION'
 location: '(Remote, USA'
 range: 'Apr 2021 – Oct 2023'
