@@ -8,7 +8,7 @@ module.exports = {
     },
     {
       name: 'Linkedin',
-      url: ' https://www.linkedin.com/in/rocco-santini-b704ba271/',
+      url: ' https://www.linkedin.com/in/rocco-santini6153/',
     },
   ],
 
