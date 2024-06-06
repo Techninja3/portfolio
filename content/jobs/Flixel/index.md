@@ -1,9 +1,9 @@
 ---
 date: '2015-03-15'
-title: 'Senior Web/Mobile Developer'
+title: 'Senior Web | Mobile Developer'
 company: 'Flixel Photos Inc'
 location: '(Remote, USA'
-range: 'Oct 2018 – Feb 2021'
+range: 'Mar 2015 – Feb 2028'
 url: ''
 ---
 
